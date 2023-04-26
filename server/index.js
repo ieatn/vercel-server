@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
+app.use(express.json())
 const dotenv = require('dotenv')
 dotenv.config()
+const cors = require('cors')
+app.use(cors())
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`)
@@ -11,16 +14,5 @@ app.get('/', (req, res) => {
     res.json({msg: 'vercel server working'});
 })
 app.get('/api', (req, res) => {
-    res.json({data: 'getting todos'});
+    res.json({msg: 'api data'});
 })
-app.get('/api', (req, res) => {
-    res.json({data: 'create todo'});
-})
-app.get('/api/:id', (req, res) => {
-    res.json({data: 'deleting todo'});
-})
-app.get('/api/:id', (req, res) => {
-    res.json({data: 'updating todo'});
-})
-
-
