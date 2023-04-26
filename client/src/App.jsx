@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { API_URL } from './api/config'
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const getTodos = async () => {
-      const res = await fetch('http://localhost:4000/')
+      const res = await fetch(`${API_URL}`)
       const data = await res.json()
       console.log(data)
       setMessage(data)
