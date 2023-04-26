@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { API_URL } from './api/config'
+import { Link } from 'react-router-dom'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
 
   return (
     <div>
+      <Link to={`/`}>home</Link>
+      <Link to={`/api`}>api</Link>
       {message.msg}
     </div>
   )

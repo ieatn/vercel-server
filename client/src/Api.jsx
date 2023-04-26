@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { API_URL } from './api/config'
-
+import { Link } from 'react-router-dom'
 
 export default function Api() {
     const [message, setMessage] = useState('')
@@ -16,6 +16,11 @@ export default function Api() {
       }, [])
 
     return (
-        <div>{message.msg}</div>
+
+        <div>
+          <Link to={`/`}>home</Link>
+          <Link to={`/api`}>api</Link>
+          {message.msg}
+        </div>
     )
 }
